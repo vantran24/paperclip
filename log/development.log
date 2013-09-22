@@ -1,0 +1,1029 @@
+Connecting to database specified by database.yml
+  [1m[36m (37.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (2.2ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (1.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to CreateFriends (20120802190047)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "friends" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120802190047')[0m
+  [1m[35m (1.3ms)[0m  commit transaction
+Migrating to AddAvatarToFriends (20120802191046)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (13.1ms)[0m  ALTER TABLE "friends" ADD "avatar_file_name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "friends" ADD "avatar_content_type" varchar(255)[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "friends" ADD "avatar_file_size" integer
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "friends" ADD "avatar_updated_at" datetime[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20120802191046')
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-09-22 13:59:29 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mFriend Load (0.1ms)[0m  [1mSELECT "friends".* FROM "friends" [0m
+  Rendered collection (0.0ms)
+  Rendered friends/index.html.erb within layouts/application (28.3ms)
+Compiled friends.css  (43ms)  (pid 39337)
+Compiled reset.css  (0ms)  (pid 39337)
+Compiled application.css  (52ms)  (pid 39337)
+Compiled jquery.js  (6ms)  (pid 39337)
+Compiled jquery_ujs.js  (0ms)  (pid 39337)
+Compiled application.js  (88ms)  (pid 39337)
+Completed 200 OK in 327ms (Views: 277.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-09-22 13:59:29 -0500
+Processing by FriendsController#index as HTML
+  [1m[35mFriend Load (0.2ms)[0m  SELECT "friends".* FROM "friends" 
+  Rendered collection (0.0ms)
+  Rendered friends/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-22 13:59:29 -0500
+Served asset /application.css - 200 OK (9ms)
+
+
+Started GET "/assets/friends.css?body=1" for 127.0.0.1 at 2013-09-22 13:59:29 -0500
+Served asset /friends.css - 200 OK (1ms)
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2013-09-22 13:59:29 -0500
+Served asset /reset.css - 200 OK (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-22 13:59:29 -0500
+Served asset /jquery.js - 200 OK (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-22 13:59:29 -0500
+Served asset /jquery_ujs.js - 200 OK (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-22 13:59:29 -0500
+Served asset /application.js - 200 OK (45ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-22 13:59:29 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-22 13:59:29 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-22 13:59:29 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2013-09-22 13:59:29 -0500
+Served asset /reset.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/friends.css?body=1" for 127.0.0.1 at 2013-09-22 13:59:29 -0500
+Served asset /friends.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2013-09-22 13:59:29 -0500
+Served asset /logo.png - 200 OK (4ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-22 13:59:29 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/shadowing.png" for 127.0.0.1 at 2013-09-22 13:59:29 -0500
+Served asset /shadowing.png - 200 OK (8ms)
+
+
+Started GET "/assets/github.png" for 127.0.0.1 at 2013-09-22 13:59:29 -0500
+Served asset /github.png - 200 OK (4ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2013-09-22 13:59:30 -0500
+Served asset /logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/github.png" for 127.0.0.1 at 2013-09-22 13:59:30 -0500
+Served asset /github.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/shadowing.png" for 127.0.0.1 at 2013-09-22 13:59:30 -0500
+Served asset /shadowing.png - 304 Not Modified (0ms)
+
+
+Started GET "/friends/new" for 127.0.0.1 at 2013-09-22 13:59:34 -0500
+Processing by FriendsController#new as HTML
+  Rendered friends/_form.html.erb (9.7ms)
+  Rendered friends/new.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 50ms (Views: 40.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-22 13:59:35 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2013-09-22 13:59:35 -0500
+Served asset /reset.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-22 13:59:35 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/friends.css?body=1" for 127.0.0.1 at 2013-09-22 13:59:35 -0500
+Served asset /friends.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-22 13:59:35 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-22 13:59:35 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started POST "/friends" for 127.0.0.1 at 2013-09-22 13:59:41 -0500
+Processing by FriendsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6FjMz/u+OLEdncIjgbWTHIdkS0mzVVV0XWo+kDezC20=", "friend"=>{"name"=>"Van"}, "commit"=>"Make a friend"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (72.3ms)[0m  INSERT INTO "friends" ("avatar_content_type", "avatar_file_name", "avatar_file_size", "avatar_updated_at", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["avatar_content_type", nil], ["avatar_file_name", nil], ["avatar_file_size", nil], ["avatar_updated_at", nil], ["created_at", Sun, 22 Sep 2013 18:59:41 UTC +00:00], ["name", "Van"], ["updated_at", Sun, 22 Sep 2013 18:59:41 UTC +00:00]]
+  [1m[36m (2.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/friends/1
+Completed 302 Found in 82ms (ActiveRecord: 75.3ms)
+
+
+Started GET "/friends/1" for 127.0.0.1 at 2013-09-22 13:59:41 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mFriend Load (0.2ms)[0m  SELECT "friends".* FROM "friends" WHERE "friends"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered friends/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 18ms (Views: 15.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2013-09-22 13:59:42 -0500
+Served asset /reset.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-22 13:59:42 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/friends.css?body=1" for 127.0.0.1 at 2013-09-22 13:59:42 -0500
+Served asset /friends.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-22 13:59:42 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-22 13:59:42 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-22 13:59:42 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2013-09-22 13:59:46 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mFriend Load (0.2ms)[0m  [1mSELECT "friends".* FROM "friends" [0m
+  Rendered friends/_friend.html.erb (2.2ms)
+  Rendered friends/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 13ms (Views: 11.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2013-09-22 13:59:46 -0500
+Served asset /reset.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-22 13:59:46 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/friends.css?body=1" for 127.0.0.1 at 2013-09-22 13:59:46 -0500
+Served asset /friends.css - 304 Not Modified (0ms)
+
+
+Started GET "/avatars/square/missing.png" for 127.0.0.1 at 2013-09-22 13:59:46 -0500
+
+ActionController::RoutingError (No route matches [GET] "/avatars/square/missing.png"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Van/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/Van/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/Van/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/Van/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-22 13:59:46 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-22 13:59:46 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-22 13:59:46 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/friends/1/edit" for 127.0.0.1 at 2013-09-22 13:59:51 -0500
+Processing by FriendsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mFriend Load (0.1ms)[0m  SELECT "friends".* FROM "friends" WHERE "friends"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered friends/_form.html.erb (2.7ms)
+  Rendered friends/edit.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 35ms (Views: 33.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-22 13:59:51 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/friends.css?body=1" for 127.0.0.1 at 2013-09-22 13:59:51 -0500
+Served asset /friends.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2013-09-22 13:59:51 -0500
+Served asset /reset.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-22 13:59:51 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-22 13:59:51 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-22 13:59:51 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started PUT "/friends/1" for 127.0.0.1 at 2013-09-22 14:00:13 -0500
+Processing by FriendsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6FjMz/u+OLEdncIjgbWTHIdkS0mzVVV0XWo+kDezC20=", "friend"=>{"name"=>"Van", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x007fdb4da569c0 @original_filename="A-Rod_SundayNight.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"friend[avatar]\"; filename=\"A-Rod_SundayNight.jpg\"\r\nContent-Type: image/jpeg\r\n", @tempfile=#<Tempfile:/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/RackMultipart20130922-39337-jausmk>>}, "commit"=>"Make a friend", "id"=>"1"}
+  [1m[36mFriend Load (0.2ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/A-Rod_SundayNight20130922-39337-l9ms8h.jpg[0]'
+[paperclip] An error was received while processing: #<Paperclip::Errors::CommandNotFoundError: Could not run the `identify` command. Please install ImageMagick.>
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/A-Rod_SundayNight20130922-39337-l9ms8h.jpg[0]'
+[paperclip] An error was received while processing: #<Paperclip::Errors::CommandNotFoundError: Could not run the `identify` command. Please install ImageMagick.>
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/A-Rod_SundayNight20130922-39337-l9ms8h.jpg[0]'
+[paperclip] An error was received while processing: #<Paperclip::Errors::CommandNotFoundError: Could not run the `identify` command. Please install ImageMagick.>
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  Rendered friends/_form.html.erb (5.3ms)
+  Rendered friends/edit.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 62ms (Views: 12.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-22 14:00:13 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2013-09-22 14:00:13 -0500
+Served asset /reset.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/friends.css?body=1" for 127.0.0.1 at 2013-09-22 14:00:13 -0500
+Served asset /friends.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-22 14:00:13 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-22 14:00:13 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-22 14:00:13 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-09-22 14:07:07 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mFriend Load (0.1ms)[0m  [1mSELECT "friends".* FROM "friends" [0m
+  Rendered friends/_friend.html.erb (2.7ms)
+  Rendered friends/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 69ms (Views: 24.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-22 14:07:07 -0500
+Served asset /application.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2013-09-22 14:07:07 -0500
+Served asset /reset.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-22 14:07:07 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/friends.css?body=1" for 127.0.0.1 at 2013-09-22 14:07:07 -0500
+Served asset /friends.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-22 14:07:07 -0500
+Served asset /jquery.js - 304 Not Modified (29ms)
+
+
+Started GET "/avatars/square/missing.png" for 127.0.0.1 at 2013-09-22 14:07:07 -0500
+
+ActionController::RoutingError (No route matches [GET] "/avatars/square/missing.png"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Van/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/Van/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/Van/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/Van/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-22 14:07:07 -0500
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started DELETE "/friends/1" for 127.0.0.1 at 2013-09-22 14:07:16 -0500
+Processing by FriendsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"6FjMz/u+OLEdncIjgbWTHIdkS0mzVVV0XWo+kDezC20=", "id"=>"1"}
+  [1m[35mFriend Load (0.3ms)[0m  SELECT "friends".* FROM "friends" WHERE "friends"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.6ms)[0m  DELETE FROM "friends" WHERE "friends"."id" = ?  [["id", 1]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/friends
+Completed 302 Found in 11ms (ActiveRecord: 5.5ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2013-09-22 14:07:16 -0500
+Processing by FriendsController#index as HTML
+  [1m[35mFriend Load (0.2ms)[0m  SELECT "friends".* FROM "friends" 
+  Rendered collection (0.0ms)
+  Rendered friends/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-22 14:07:16 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2013-09-22 14:07:17 -0500
+Served asset /reset.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/friends.css?body=1" for 127.0.0.1 at 2013-09-22 14:07:17 -0500
+Served asset /friends.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-22 14:07:17 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-22 14:07:17 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-22 14:07:17 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/friends/new" for 127.0.0.1 at 2013-09-22 14:07:17 -0500
+Processing by FriendsController#new as HTML
+  Rendered friends/_form.html.erb (8.0ms)
+  Rendered friends/new.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 40ms (Views: 38.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/friends.css?body=1" for 127.0.0.1 at 2013-09-22 14:07:18 -0500
+Served asset /friends.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-22 14:07:18 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2013-09-22 14:07:18 -0500
+Served asset /reset.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-22 14:07:18 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-22 14:07:18 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-22 14:07:18 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started POST "/friends" for 127.0.0.1 at 2013-09-22 14:07:38 -0500
+Processing by FriendsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6FjMz/u+OLEdncIjgbWTHIdkS0mzVVV0XWo+kDezC20=", "friend"=>{"name"=>"Van", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x007fd1e2972e60 @original_filename="A-Rod_SundayNight.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"friend[avatar]\"; filename=\"A-Rod_SundayNight.jpg\"\r\nContent-Type: image/jpeg\r\n", @tempfile=#<Tempfile:/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/RackMultipart20130922-39946-g6oizt>>}, "commit"=>"Make a friend"}
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/A-Rod_SundayNight20130922-39946-1ipvqg4.jpg[0]'
+Command :: identify -format %m '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/A-Rod_SundayNight20130922-39946-1ipvqg4.jpg[0]'
+Command :: identify -format %m '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/A-Rod_SundayNight20130922-39946-1ipvqg4.jpg[0]'
+Command :: identify -format %m '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/A-Rod_SundayNight20130922-39946-1ipvqg4.jpg[0]'
+Command :: convert '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/A-Rod_SundayNight20130922-39946-1ipvqg4.jpg[0]' -auto-orient -resize "100x100>" '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/A-Rod_SundayNight20130922-39946-1ipvqg420130922-39946-2h76gh'
+Command :: file -b --mime '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/A-Rod_SundayNight20130922-39946-1ipvqg420130922-39946-2h76gh'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/A-Rod_SundayNight20130922-39946-1ipvqg4.jpg[0]'
+Command :: identify -format %m '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/A-Rod_SundayNight20130922-39946-1ipvqg4.jpg[0]'
+Command :: identify -format %m '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/A-Rod_SundayNight20130922-39946-1ipvqg4.jpg[0]'
+Command :: identify -format %m '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/A-Rod_SundayNight20130922-39946-1ipvqg4.jpg[0]'
+Command :: convert '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/A-Rod_SundayNight20130922-39946-1ipvqg4.jpg[0]' -auto-orient -resize "200x" -crop "200x200+0+33" +repage '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/A-Rod_SundayNight20130922-39946-1ipvqg420130922-39946-1ekxiqy'
+Command :: file -b --mime '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/A-Rod_SundayNight20130922-39946-1ipvqg420130922-39946-1ekxiqy'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/A-Rod_SundayNight20130922-39946-1ipvqg4.jpg[0]'
+Command :: identify -format %m '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/A-Rod_SundayNight20130922-39946-1ipvqg4.jpg[0]'
+Command :: identify -format %m '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/A-Rod_SundayNight20130922-39946-1ipvqg4.jpg[0]'
+Command :: identify -format %m '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/A-Rod_SundayNight20130922-39946-1ipvqg4.jpg[0]'
+Command :: convert '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/A-Rod_SundayNight20130922-39946-1ipvqg4.jpg[0]' -auto-orient -resize "300x300>" '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/A-Rod_SundayNight20130922-39946-1ipvqg420130922-39946-1uy01ot'
+Command :: file -b --mime '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/A-Rod_SundayNight20130922-39946-1ipvqg420130922-39946-1uy01ot'
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `avatar_content_type`
+  [1m[35mSQL (27.2ms)[0m  INSERT INTO "friends" ("avatar_content_type", "avatar_file_name", "avatar_file_size", "avatar_updated_at", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["avatar_content_type", "image/jpeg"], ["avatar_file_name", "A-Rod_SundayNight.jpg"], ["avatar_file_size", 84526], ["avatar_updated_at", Sun, 22 Sep 2013 19:07:38 UTC +00:00], ["created_at", Sun, 22 Sep 2013 19:07:39 UTC +00:00], ["name", "Van"], ["updated_at", Sun, 22 Sep 2013 19:07:39 UTC +00:00]]
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/friends/2
+Completed 302 Found in 708ms (ActiveRecord: 29.3ms)
+
+
+Started GET "/friends/2" for 127.0.0.1 at 2013-09-22 14:07:39 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mFriend Load (0.1ms)[0m  SELECT "friends".* FROM "friends" WHERE "friends"."id" = ? LIMIT 1  [["id", "2"]]
+  Rendered friends/show.html.erb within layouts/application (23.5ms)
+Completed 200 OK in 62ms (Views: 60.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-22 14:07:39 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2013-09-22 14:07:39 -0500
+Served asset /reset.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/friends.css?body=1" for 127.0.0.1 at 2013-09-22 14:07:39 -0500
+Served asset /friends.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-22 14:07:39 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-22 14:07:39 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-22 14:07:39 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/friends/2" for 127.0.0.1 at 2013-09-22 14:14:01 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mFriend Load (0.2ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  Rendered friends/show.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 72ms (Views: 23.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-22 14:14:01 -0500
+Served asset /application.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-22 14:14:01 -0500
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2013-09-22 14:14:01 -0500
+Served asset /reset.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/friends.css?body=1" for 127.0.0.1 at 2013-09-22 14:14:01 -0500
+Served asset /friends.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-22 14:14:01 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-22 14:14:01 -0500
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-09-22 14:14:06 -0500
+Processing by FriendsController#index as HTML
+  [1m[35mFriend Load (0.2ms)[0m  SELECT "friends".* FROM "friends" 
+  Rendered friends/_friend.html.erb (3.8ms)
+  Rendered friends/index.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 18ms (Views: 16.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2013-09-22 14:14:06 -0500
+Served asset /reset.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/friends.css?body=1" for 127.0.0.1 at 2013-09-22 14:14:06 -0500
+Served asset /friends.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-22 14:14:06 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-22 14:14:06 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-22 14:14:06 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-22 14:14:06 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-09-22 14:15:20 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mFriend Load (0.1ms)[0m  [1mSELECT "friends".* FROM "friends" [0m
+  Rendered friends/_friend.html.erb (3.0ms)
+  Rendered friends/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 75ms (Views: 24.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-22 14:15:20 -0500
+Served asset /application.css - 304 Not Modified (14ms)
+
+
+Started GET "/assets/friends.css?body=1" for 127.0.0.1 at 2013-09-22 14:15:20 -0500
+Served asset /friends.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2013-09-22 14:15:20 -0500
+Served asset /reset.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-22 14:15:20 -0500
+Served asset /jquery.js - 304 Not Modified (30ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-22 14:15:20 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-22 14:15:20 -0500
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/friends/new" for 127.0.0.1 at 2013-09-22 14:37:36 -0500
+Processing by FriendsController#new as HTML
+  Rendered friends/_form.html.erb (80.9ms)
+  Rendered friends/new.html.erb within layouts/application (82.5ms)
+Completed 200 OK in 114ms (Views: 113.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-22 14:37:36 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/friends.css?body=1" for 127.0.0.1 at 2013-09-22 14:37:36 -0500
+Served asset /friends.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2013-09-22 14:37:36 -0500
+Served asset /reset.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-22 14:37:36 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-22 14:37:36 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-22 14:37:36 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2013-09-22 14:37:36 -0500
+Served asset /logo.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/github.png" for 127.0.0.1 at 2013-09-22 14:37:36 -0500
+Served asset /github.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/shadowing.png" for 127.0.0.1 at 2013-09-22 14:37:36 -0500
+Served asset /shadowing.png - 304 Not Modified (1ms)
+
+
+Started POST "/friends" for 127.0.0.1 at 2013-09-22 14:38:21 -0500
+Processing by FriendsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6FjMz/u+OLEdncIjgbWTHIdkS0mzVVV0XWo+kDezC20=", "friend"=>{"name"=>"new friend", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x007fbccc297620 @original_filename="PackShoe.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"friend[avatar]\"; filename=\"PackShoe.png\"\r\nContent-Type: image/png\r\n", @tempfile=#<Tempfile:/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/RackMultipart20130922-40003-1mel2nh>>}, "commit"=>"Make a friend"}
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/PackShoe20130922-40003-bwenu8.png[0]'
+Command :: identify -format %m '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/PackShoe20130922-40003-bwenu8.png[0]'
+Command :: identify -format %m '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/PackShoe20130922-40003-bwenu8.png[0]'
+Command :: identify -format %m '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/PackShoe20130922-40003-bwenu8.png[0]'
+Command :: convert '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/PackShoe20130922-40003-bwenu8.png[0]' -auto-orient -resize "100x100>" '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/PackShoe20130922-40003-bwenu820130922-40003-8ofy3m'
+Command :: file -b --mime '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/PackShoe20130922-40003-bwenu820130922-40003-8ofy3m'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/PackShoe20130922-40003-bwenu8.png[0]'
+Command :: identify -format %m '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/PackShoe20130922-40003-bwenu8.png[0]'
+Command :: identify -format %m '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/PackShoe20130922-40003-bwenu8.png[0]'
+Command :: identify -format %m '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/PackShoe20130922-40003-bwenu8.png[0]'
+Command :: convert '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/PackShoe20130922-40003-bwenu8.png[0]' -auto-orient -resize "x200" -crop "200x200+56+0" +repage '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/PackShoe20130922-40003-bwenu820130922-40003-1bo5m3s'
+Command :: file -b --mime '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/PackShoe20130922-40003-bwenu820130922-40003-1bo5m3s'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/PackShoe20130922-40003-bwenu8.png[0]'
+Command :: identify -format %m '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/PackShoe20130922-40003-bwenu8.png[0]'
+Command :: identify -format %m '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/PackShoe20130922-40003-bwenu8.png[0]'
+Command :: identify -format %m '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/PackShoe20130922-40003-bwenu8.png[0]'
+Command :: convert '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/PackShoe20130922-40003-bwenu8.png[0]' -auto-orient -resize "300x300>" '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/PackShoe20130922-40003-bwenu820130922-40003-96q90l'
+Command :: file -b --mime '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/PackShoe20130922-40003-bwenu820130922-40003-96q90l'
+  [1m[35m (0.2ms)[0m  begin transaction
+Binary data inserted for `string` type on column `avatar_content_type`
+  [1m[36mSQL (38.3ms)[0m  [1mINSERT INTO "friends" ("avatar_content_type", "avatar_file_name", "avatar_file_size", "avatar_updated_at", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["avatar_content_type", "image/png"], ["avatar_file_name", "PackShoe.png"], ["avatar_file_size", 378919], ["avatar_updated_at", Sun, 22 Sep 2013 19:38:21 UTC +00:00], ["created_at", Sun, 22 Sep 2013 19:38:22 UTC +00:00], ["name", "new friend"], ["updated_at", Sun, 22 Sep 2013 19:38:22 UTC +00:00]]
+  [1m[35m (4.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/friends/3
+Completed 302 Found in 724ms (ActiveRecord: 42.5ms)
+
+
+Started GET "/friends/3" for 127.0.0.1 at 2013-09-22 14:38:22 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mFriend Load (0.2ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."id" = ? LIMIT 1[0m  [["id", "3"]]
+  Rendered friends/show.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 50ms (Views: 47.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-22 14:38:22 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/friends.css?body=1" for 127.0.0.1 at 2013-09-22 14:38:22 -0500
+Served asset /friends.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2013-09-22 14:38:22 -0500
+Served asset /reset.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-22 14:38:22 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-22 14:38:22 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-22 14:38:22 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2013-09-22 14:38:26 -0500
+Processing by FriendsController#index as HTML
+  [1m[35mFriend Load (0.2ms)[0m  SELECT "friends".* FROM "friends" 
+  Rendered friends/_friend.html.erb (3.5ms)
+  Rendered friends/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 30ms (Views: 28.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-22 14:38:26 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/friends.css?body=1" for 127.0.0.1 at 2013-09-22 14:38:26 -0500
+Served asset /friends.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2013-09-22 14:38:26 -0500
+Served asset /reset.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-22 14:38:26 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-22 14:38:26 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-22 14:38:26 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/friends/3/edit" for 127.0.0.1 at 2013-09-22 14:38:30 -0500
+Processing by FriendsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mFriend Load (0.1ms)[0m  [1mSELECT "friends".* FROM "friends" WHERE "friends"."id" = ? LIMIT 1[0m  [["id", "3"]]
+  Rendered friends/_form.html.erb (2.2ms)
+  Rendered friends/edit.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 11ms (Views: 9.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-22 14:38:30 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/friends.css?body=1" for 127.0.0.1 at 2013-09-22 14:38:30 -0500
+Served asset /friends.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2013-09-22 14:38:30 -0500
+Served asset /reset.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-22 14:38:30 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-22 14:38:30 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-22 14:38:30 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2013-09-22 14:38:33 -0500
+Processing by FriendsController#index as HTML
+  [1m[35mFriend Load (0.2ms)[0m  SELECT "friends".* FROM "friends" 
+  Rendered friends/_friend.html.erb (3.3ms)
+  Rendered friends/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-22 14:38:33 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2013-09-22 14:38:33 -0500
+Served asset /reset.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-22 14:38:33 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/friends.css?body=1" for 127.0.0.1 at 2013-09-22 14:38:33 -0500
+Served asset /friends.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-22 14:38:33 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-22 14:38:33 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-09-22 16:39:47 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mFriend Load (0.2ms)[0m  [1mSELECT "friends".* FROM "friends" [0m
+  Rendered friends/_friend.html.erb (5.8ms)
+  Rendered friends/index.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 225ms (Views: 130.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-09-22 16:39:47 -0500
+Processing by FriendsController#index as HTML
+  [1m[35mFriend Load (0.3ms)[0m  SELECT "friends".* FROM "friends" 
+  Rendered friends/_friend.html.erb (6.4ms)
+  Rendered friends/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 19ms (Views: 17.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-22 16:39:47 -0500
+Served asset /application.css - 304 Not Modified (23ms)
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2013-09-22 16:39:47 -0500
+Served asset /reset.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/friends.css?body=1" for 127.0.0.1 at 2013-09-22 16:39:47 -0500
+Served asset /friends.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-22 16:39:47 -0500
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-22 16:39:47 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-22 16:39:47 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-22 16:39:47 -0500
+Served asset /application.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2013-09-22 16:39:47 -0500
+Served asset /reset.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/friends.css?body=1" for 127.0.0.1 at 2013-09-22 16:39:47 -0500
+Served asset /friends.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2013-09-22 16:39:47 -0500
+Served asset /logo.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/github.png" for 127.0.0.1 at 2013-09-22 16:39:47 -0500
+Served asset /github.png - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-22 16:39:47 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-22 16:39:47 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-22 16:39:47 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/github.png" for 127.0.0.1 at 2013-09-22 16:39:47 -0500
+Served asset /github.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2013-09-22 16:39:47 -0500
+Served asset /logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/shadowing.png" for 127.0.0.1 at 2013-09-22 16:39:47 -0500
+Served asset /shadowing.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/shadowing.png" for 127.0.0.1 at 2013-09-22 16:39:47 -0500
+Served asset /shadowing.png - 304 Not Modified (1ms)
+
+
+Started GET "/friends/new" for 127.0.0.1 at 2013-09-22 16:39:53 -0500
+Processing by FriendsController#new as HTML
+  Rendered friends/_form.html.erb (81.1ms)
+  Rendered friends/new.html.erb within layouts/application (83.1ms)
+Completed 200 OK in 171ms (Views: 170.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/friends.css?body=1" for 127.0.0.1 at 2013-09-22 16:39:54 -0500
+Served asset /friends.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-22 16:39:54 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2013-09-22 16:39:54 -0500
+Served asset /reset.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-22 16:39:54 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-22 16:39:54 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-22 16:39:54 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started POST "/friends" for 127.0.0.1 at 2013-09-22 16:40:09 -0500
+Processing by FriendsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6FjMz/u+OLEdncIjgbWTHIdkS0mzVVV0XWo+kDezC20=", "friend"=>{"name"=>"Ryan", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x007fe31d6a9520 @original_filename="black.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"friend[avatar]\"; filename=\"black.jpg\"\r\nContent-Type: image/jpeg\r\n", @tempfile=#<Tempfile:/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/RackMultipart20130922-40486-1ij5i4e>>}, "commit"=>"Make a friend"}
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/black20130922-40486-1mtw7cw.jpg[0]'
+Command :: identify -format %m '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/black20130922-40486-1mtw7cw.jpg[0]'
+Command :: identify -format %m '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/black20130922-40486-1mtw7cw.jpg[0]'
+Command :: identify -format %m '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/black20130922-40486-1mtw7cw.jpg[0]'
+Command :: convert '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/black20130922-40486-1mtw7cw.jpg[0]' -auto-orient -resize "100x100>" '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/black20130922-40486-1mtw7cw20130922-40486-1tff2d4'
+Command :: file -b --mime '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/black20130922-40486-1mtw7cw20130922-40486-1tff2d4'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/black20130922-40486-1mtw7cw.jpg[0]'
+Command :: identify -format %m '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/black20130922-40486-1mtw7cw.jpg[0]'
+Command :: identify -format %m '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/black20130922-40486-1mtw7cw.jpg[0]'
+Command :: identify -format %m '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/black20130922-40486-1mtw7cw.jpg[0]'
+Command :: convert '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/black20130922-40486-1mtw7cw.jpg[0]' -auto-orient -resize "x200" -crop "200x200+33+0" +repage '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/black20130922-40486-1mtw7cw20130922-40486-1o00xf5'
+Command :: file -b --mime '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/black20130922-40486-1mtw7cw20130922-40486-1o00xf5'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/black20130922-40486-1mtw7cw.jpg[0]'
+Command :: identify -format %m '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/black20130922-40486-1mtw7cw.jpg[0]'
+Command :: identify -format %m '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/black20130922-40486-1mtw7cw.jpg[0]'
+Command :: identify -format %m '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/black20130922-40486-1mtw7cw.jpg[0]'
+Command :: convert '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/black20130922-40486-1mtw7cw.jpg[0]' -auto-orient -resize "300x300>" '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/black20130922-40486-1mtw7cw20130922-40486-11djeon'
+Command :: file -b --mime '/var/folders/8j/87mdklz14b57m50rnwf28v5m0000gn/T/black20130922-40486-1mtw7cw20130922-40486-11djeon'
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `avatar_content_type`
+  [1m[35mSQL (259.9ms)[0m  INSERT INTO "friends" ("avatar_content_type", "avatar_file_name", "avatar_file_size", "avatar_updated_at", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["avatar_content_type", "image/jpeg"], ["avatar_file_name", "black.jpg"], ["avatar_file_size", 5427], ["avatar_updated_at", Sun, 22 Sep 2013 21:40:09 UTC +00:00], ["created_at", Sun, 22 Sep 2013 21:40:10 UTC +00:00], ["name", "Ryan"], ["updated_at", Sun, 22 Sep 2013 21:40:10 UTC +00:00]]
+  [1m[36m (23.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/friends/4
+Completed 302 Found in 1470ms (ActiveRecord: 283.2ms)
+
+
+Started GET "/friends/4" for 127.0.0.1 at 2013-09-22 16:40:10 -0500
+Processing by FriendsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mFriend Load (0.3ms)[0m  SELECT "friends".* FROM "friends" WHERE "friends"."id" = ? LIMIT 1  [["id", "4"]]
+  Rendered friends/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 287ms (Views: 283.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-22 16:40:11 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2013-09-22 16:40:11 -0500
+Served asset /reset.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/friends.css?body=1" for 127.0.0.1 at 2013-09-22 16:40:11 -0500
+Served asset /friends.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-22 16:40:11 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-22 16:40:11 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-22 16:40:11 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/friends" for 127.0.0.1 at 2013-09-22 16:40:13 -0500
+Processing by FriendsController#index as HTML
+  [1m[36mFriend Load (0.2ms)[0m  [1mSELECT "friends".* FROM "friends" [0m
+  Rendered friends/_friend.html.erb (5.1ms)
+  Rendered friends/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 15ms (Views: 13.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-22 16:40:13 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2013-09-22 16:40:13 -0500
+Served asset /reset.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/friends.css?body=1" for 127.0.0.1 at 2013-09-22 16:40:13 -0500
+Served asset /friends.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-22 16:40:13 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-22 16:40:13 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-22 16:40:13 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
